@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Expenditure>
+
+<HTML>
+<body>
+    <table class="expend mb-5 table-striped table-bordered col-3">
+        <thead>
+            <tr>
+                <th>
+                    Nom
+                </th>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Montant
+                </th>
+        </thead>
+        @foreach (var expend in Model)
+        {
+
+            <tr>
+                <td>
+                    @expend.Name
+                </td>
+                <td>
+                    @expend.Date
+                </td>
+                <td>
+                    @expend.Amount
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+
+
+
+
+
