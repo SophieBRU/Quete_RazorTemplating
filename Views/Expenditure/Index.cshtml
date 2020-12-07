@@ -2,7 +2,7 @@
 
 <HTML>
 <body>
-    <table class="expend mb-5 table-striped table-bordered col-3">
+    <table class="expend mb-5 table table-bordered col-3">
         <thead>
             <tr>
                 <th>
@@ -14,10 +14,13 @@
                 <th>
                     Montant
                 </th>
+                <th>
+                    Total
+                </th>
+            </tr>
         </thead>
         @foreach (var expend in Model)
         {
-
             <tr>
                 <td>
                     @expend.Name
@@ -28,8 +31,17 @@
                 <td>
                     @expend.Amount
                 </td>
+                <td class="table-active"></td>
             </tr>
         }
+    <tr>
+        <td class="table-active"></td>
+        <td class="table-active"></td>
+        <td class="table-active"></td>
+        <td>
+            @Model.Sum(e => e.Amount)
+        </td>
+    </tr>
     </table>
 </body>
 
